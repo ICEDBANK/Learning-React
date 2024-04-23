@@ -1,0 +1,47 @@
+/* table, th, td {
+
+    border: 1em solid rgba(0, 0, 0, 0.493);
+    border-collapse: collapse;
+    padding: 2em;
+
+}
+
+table a {
+
+    background-color: grey;
+    margin: 1em;
+    border-radius: 1.5em;
+    text-decoration: none;
+    padding: 1.5em;
+
+} */
+
+/* table a:visited {
+
+    color: rgb(25,25, 26);
+
+}
+
+.edit {
+    
+    background-color: rgb(238,173,7);
+
+}
+
+.update {
+
+    background-color: green;
+
+}
+
+.delete {
+
+    background-color: red;
+
+} */
+
+input {
+
+    margin-bottom: 1em;
+
+}
