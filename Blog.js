@@ -1,4 +1,6 @@
+// Define BlogPage component
 function BlogPage() {
+    // Define an array of blog post data
     const MY_DATA = [
         {
             title: "The Pros of Winning the Lottery",
@@ -14,14 +16,20 @@ function BlogPage() {
         }
     ];
 
+    // Render JSX markup to display blog post data
     return (
         <div>
+            {/* Render heading for the blog list */}
             <h1>This is the blog list</h1>
-            <h2>Displays Dynamic Array using Map Funcition</h2>
+            {/* Render heading to indicate dynamic array usage */}
+            <h2>Displays Dynamic Array using Map Function</h2>
+            {/* Map over the MY_DATA array and render each blog post */}
             {MY_DATA.map((post, index) => (
                 <ul key={index}>
                     <li>
+                        {/* Render the title of the blog post */}
                         <h3>{post.title}</h3>
+                        {/* Render the content of the blog post */}
                         <p>{post.content}</p>
                     </li>
                 </ul>
@@ -30,4 +38,5 @@ function BlogPage() {
     );
 }
 
+// Export the BlogPage component
 export default BlogPage;
