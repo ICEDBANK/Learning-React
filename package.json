@@ -45,7 +45,8 @@
     "grunt-shell": "^4.0.0",
     "gulp": "^5.0.0",
     "gulp-git": "^2.10.1",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "Gruntfile.js",

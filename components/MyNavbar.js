@@ -12,7 +12,7 @@ function MyNavBar() {
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         {/* Navbar Brand */}
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home">Joshua Rice</Navbar.Brand>
         {/* Navbar Toggle Button */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         {/* Navbar Collapse */}
