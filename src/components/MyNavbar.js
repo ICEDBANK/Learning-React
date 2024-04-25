@@ -24,6 +24,7 @@ function MyNavBar() {
             <Nav.Link as={NavLink} to='/About'>About</Nav.Link>
             <Nav.Link as={NavLink} to='/Products'>Products</Nav.Link>
             <Nav.Link as={NavLink} to='/MyTable'>My Table</Nav.Link>
+            <Nav.Link as={NavLink} to='/Test'>UseState</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
