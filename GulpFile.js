@@ -15,6 +15,11 @@ gulp.task('push-changes', function(cb) {
     git.push('origin', 'master', cb); // Push changes to the 'master' branch of the 'origin' remote
 });
 
+// Task to pull changes from remote repository
+gulp.task('pull-changes', function(cb) {
+    git.pull('origin', 'master', cb); // Pull changes from the 'master' branch of the 'origin' remote
+});
+
 // Debounced commit and push function
 const debouncedCommitAndPush = debounce(function() {
     console.log('Debounced function called. Waiting for debounce delay...');
@@ -29,5 +34,5 @@ gulp.task('watch', function() {
     });
 });
 
-// Default task to start watching for changes
-gulp.task('default', gulp.series('watch'));
+// Default task to start watching for changes and pull changes from remote repository
+gulp.task('default', gulp.series('pull-changes', 'watch'));
