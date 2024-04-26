@@ -104,7 +104,7 @@ function MyTable(){
 
     }
 
-    const [isEditing, setEditing] => us
+    const [isEditing, setEditing] => useState()
 
     // Render JSX markup to display table of users
     return (
