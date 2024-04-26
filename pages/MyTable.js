@@ -106,6 +106,7 @@ function MyTable(){
         setLocation(targetItem.city);
         setCurrentAge(targetItem.age);
         settargetId(index);
+        console.log({targetItem});
         setEditing(false);
     };
 
