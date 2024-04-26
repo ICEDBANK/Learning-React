@@ -110,7 +110,7 @@ function MyTable(){
     const updateHandler = (event) => {
         
         event.preventDefault();
-        let 
+        let user
         setEditing(true);
 
     }
