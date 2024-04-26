@@ -108,7 +108,7 @@ function MyTable(){
 
     const updateHandler = () => {
 
-        alert
+        alert()
 
     }
 
