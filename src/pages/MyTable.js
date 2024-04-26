@@ -111,7 +111,7 @@ function MyTable(){
         
         event.preventDefault();
         let usersCopy = [...users];
-        let targe
+        let target
         setEditing(true);
 
     }
