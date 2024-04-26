@@ -109,6 +109,7 @@ function MyTable(){
 
     const updateHandler = () => {
         
+        
         setEditing(true);
 
     }
