@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const git = require('gulp-git');
 const watch = require('gulp-watch');
+const debounce = require('lodash.debounce');
 
 // Task to commit changes
 gulp.task('commit-changes', function() {
@@ -14,10 +15,15 @@ gulp.task('push-changes', function(cb) {
     git.push('origin', 'master', cb); // Push changes to the 'master' branch of the 'origin' remote
 });
 
-// Watch task to trigger commit and push when files change
+// Debounced commit and push function
+const debouncedCommitAndPush = debounce(function() {
+    gulp.series('commit-changes', 'push-changes')();
+}, 2000); // 2000ms debounce time (adjust as needed)
+
+// Watch task to trigger commit and push after a debounce period
 gulp.task('watch', function() {
-    watch(['./src/**/*.js', './pages/**/*.js', './components/**/*.js'], function() { // Watch JavaScript files in 'src', 'pages', and 'components' directories and their subdirectories
-        gulp.series('commit-changes', 'push-changes')();
+    watch(['./src/**/*.js', './pages/**/*.js', './components/**/*.js'], function() {
+        debouncedCommitAndPush();
     });
 });
 
