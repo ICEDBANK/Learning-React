@@ -100,7 +100,7 @@ function MyTable(){
         setFirstName(targetItem.fname);
         setLastName(targetItem.lname);
         setLocation(targetItem.city);
-        setFirstName(targetItem.age);
+        setCurrentAge(targetItem.age);
 
     }
 
