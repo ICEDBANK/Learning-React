@@ -111,6 +111,7 @@ function MyTable(){
 
     // Function to handle update operation for a user
     const updateHandler = (event) => {
+        alert('Update Button Clicked');
         event.preventDefault();
         let usersCopy = {...users};
         let targetItem = usersCopy[targetId];
