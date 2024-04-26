@@ -109,9 +109,9 @@ function MyTable(){
         setEditing(false);
     };
 
+    // Function to handle update operation for a user
     const updateHandler = (event) => {
         event.preventDefault();
-        console.log('Update button clicked');
         let usersCopy = users.map((user, index) => {
             if (index === targetId) {
                 return {
@@ -134,7 +134,7 @@ function MyTable(){
     
 
     // State variable to track if editing mode is enabled
-    const [isEditing, setEditing] = useState(false);
+    const [isEditing, setEditing] = useState(true);
 
     // Render JSX markup to display table of users
     return (
@@ -143,27 +143,27 @@ function MyTable(){
                 <Row>
                     {/* Form for adding new user */}
                     <Col md={4}>
-                    <Form onSubmit={isEditing ? formSubmit : updateHandler}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Enter First Name: </Form.Label>
-                            <Form.Control type="text" placeholder="Enter First Name" value={firstName} onChange={firstNameHandler}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Enter Last Name: </Form.Label>
-                            <Form.Control type="text" placeholder="Enter Last Name" value={lastName} onChange={lastNameHandler}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Enter City: </Form.Label>
-                            <Form.Control type="text" placeholder="Enter City" value={location} onChange={locationHandler}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Enter Age : </Form.Label>
-                            <Form.Control type="number" placeholder="Enter Age" value={currentAge} onChange={currentAgeHandler}/>
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            {isEditing ? (<Button variant="primary" type='submit'>Submit</Button>) : (<Button variant="info" type='submit'>Update</Button>)}
-                        </Form.Group>
-                    </Form>
+                        <Form onSubmit={isEditing ? formSubmit : updateHandler}>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Enter First Name: </Form.Label>
+                                <Form.Control type="text" placeholder="Enter First Name" value={firstName} onChange={firstNameHandler}/>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Enter Last Name: </Form.Label>
+                                <Form.Control type="text" placeholder="Enter Last Name" value={lastName} onChange={lastNameHandler}/>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Enter City: </Form.Label>
+                                <Form.Control type="text" placeholder="Enter City" value={location} onChange={locationHandler}/>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                <Form.Label>Enter Age : </Form.Label>
+                                <Form.Control type="number" placeholder="Enter Age" value={currentAge} onChange={currentAgeHandler}/>
+                            </Form.Group>
+                            <Form.Group className="mb-3">
+                                {isEditing ? (<Button variant="primary" type='submit'>Submit</Button>) : (<Button variant="info" type='submit'>Update</Button>)}
+                            </Form.Group>
+                        </Form>
                     </Col>
                     {/* Display table of users */}
                     <Col md={8}>
