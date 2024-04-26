@@ -17,7 +17,7 @@ function App() {
   const [myText, setMyText] = useState('Joshua Rice');
 
   // State variable for demonstration of useState with different types
-  const [myNum, setMyNum] = useState(1);
+  const [myNum, setMyNum] = useState(1);test
 
   // Function to toggle visibility of a section based on index
   const toggleVisibility = (index) => {

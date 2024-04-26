@@ -121,7 +121,7 @@ function MyTable(){
                                 <Form.Control type="text" placeholder="Enter Last Name" value={lastName} onChange={lastNameHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Form.Label>Enter False: </Form.Label>
+                                <Form.Label>Enter true: </Form.Label>
                                 <Form.Control type="text" placeholder="Enter City" value={location} onChange={locationHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
