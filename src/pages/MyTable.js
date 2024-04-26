@@ -104,7 +104,7 @@ function MyTable(){
 
     }
 
-    const []
+    const [is]
 
     // Render JSX markup to display table of users
     return (
