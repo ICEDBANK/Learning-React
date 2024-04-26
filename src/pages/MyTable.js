@@ -110,7 +110,8 @@ function MyTable(){
     const updateHandler = (event) => {
         
         event.preventDefault();
-        let usersCopy = [...users]
+        let usersCopy = [...users];
+        
         setEditing(true);
 
     }
