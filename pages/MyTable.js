@@ -110,10 +110,28 @@ function MyTable(){
     };
 
     // Function to handle update operation for a user
-    const updateHandler = () => {
-        alert('Update Button Clicked');
+    const updateHandler = (event) => {
+        event.preventDefault();
+        let usersCopy = users.map((user, index) => {
+            if (index === targetId) {
+                return {
+                    ...user,
+                    fname: firstName,
+                    lname: lastName,
+                    city: location,
+                    age: currentAge
+                };
+            }
+            return user;
+        });
+        setUsers(usersCopy);
+        setFirstName('');
+        setLastName('');
+        setLocation('');
+        setCurrentAge('');
         setEditing(true);
     };
+    
 
     // State variable to track if editing mode is enabled
     const [isEditing, setEditing] = useState(true);
