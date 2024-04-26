@@ -101,6 +101,7 @@ function MyTable(){
         setLastName(targetItem.lname);
         setLocation(targetItem.city);
         setCurrentAge(targetItem.age);
+        
 
     }
 
