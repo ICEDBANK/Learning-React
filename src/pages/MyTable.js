@@ -108,7 +108,7 @@ function MyTable(){
 
     const updateHandler = () => {
 
-        alert('Update button Click')
+        alert('Update button Clicked')
 
     }
 
