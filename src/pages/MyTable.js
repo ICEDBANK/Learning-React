@@ -108,7 +108,7 @@ function MyTable(){
     const [isEditing, setEditing] = useState(true);
 
     const updateHandler = () => {
-        Jbl420$trD8afebbd
+        
         setEditing(true);
 
     }
