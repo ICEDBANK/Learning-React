@@ -93,6 +93,17 @@ function MyTable(){
         setUsers(userCopy);
     };
 
+    const editItem = (index) => {
+
+        let usersCopy = {...users};
+        let targetItem = usersCopy[index];
+        setFirstName(targetItem.fname);
+        setFirstName(targetItem.lname);
+        setFirstName(targetItem.city);
+        setFirstName(targetItem.age);
+
+    }
+
     // Render JSX markup to display table of users
     return (
         <>
