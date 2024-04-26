@@ -109,7 +109,7 @@ function MyTable(){
     const updateHandler = () => {
 
         alert('Update button Clicked')
-        set
+        setE
 
     }
 
