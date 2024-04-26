@@ -113,7 +113,6 @@ function MyTable(){
         let usersCopy = [...users];
         let targetItem = usersCopy;
         setEditing(true);
-        
 
     }
 
