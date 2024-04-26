@@ -164,7 +164,7 @@ function MyTable(){
                                         <td>
                                             {/* Buttons for edit, update, and delete operations */}
                                             <Button variant="warning mx-2" size='sm'>Edit</Button>
-                                            
+                                            <Button variant="info mx-2" size='sm'>Update</Button>
                                             <Button variant="danger mx-2" size='sm' onClick={() => handleDelete(index)}>Delete</Button>
                                         </td>
                                     </tr>
