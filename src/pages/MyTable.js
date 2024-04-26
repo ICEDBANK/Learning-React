@@ -131,8 +131,7 @@ function MyTable(){
                                 <Form.Control type="number" placeholder="Enter Age" value={currentAge} onChange={currentAgeHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Button variant="primary" type='submit'>Submit</Button>
-                                            <Button variant="info mx-2" size='sm'>Update</Button>
+                                <Button variant="primary" type='submit'>Submit</Button><Button variant="info mx-2" size='sm'>Update</Button>
                             </Form.Group>
                         </Form>
                     </Col>
