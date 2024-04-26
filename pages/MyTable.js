@@ -114,8 +114,16 @@ function MyTable(){
         event.preventDefault();
         let usersCopy = {...users};
         let targetItem = usersCopy[targetId];
+        targetItem.firstName;
+        targetItem.lastName;
+        targetItem.location;
+        targetItem.currentAge;
+        setUsers(usersCopy);
+        setFirstName('');
+        setLastName('');
+        setLocation('');
+        setCurrentAge('');
         setEditing(true);
-        // Perform update operation here if needed
     };
 
     // State variable to track if editing mode is enabled
