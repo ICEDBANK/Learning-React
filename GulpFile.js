@@ -4,7 +4,7 @@ const watch = require('gulp-watch');
 
 // Task to commit changes
 gulp.task('commit-changes', function() {
-    return gulp.src(['./pages/AboutPage.js', './pages/HomePage.js', './pages/MyTable.js', './src/App.js', './pages/BlogPage.js', './pages/ProductsPage.js', './src/index.js'])
+    return gulp.src(['./src/**/*.js', './pages/**/*.js', './components/**/*.js'])
         .pipe(git.add()) // Add all files to staging area
         .pipe(git.commit('Automated commit')); // Commit changes with a default message
 });
@@ -16,7 +16,7 @@ gulp.task('push-changes', function(cb) {
 
 // Watch task to trigger commit and push when files change
 gulp.task('watch', function() {
-    watch(['./pages/*.js', './src/*.js'], function() { // Watch JavaScript files in 'pages' and 'src' directories
+    watch(['./src/**/*.js', './pages/**/*.js', './components/**/*.js'], function() { // Watch JavaScript files in 'src', 'pages', and 'components' directories and their subdirectories
         gulp.series('commit-changes', 'push-changes')();
     });
 });
