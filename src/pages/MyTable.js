@@ -33,36 +33,28 @@ function MyTable(){
             city: "Wyomissing",
             age: 2
         }
-    ])
+    ]);
 
-    const [firstName, setfirstName] = useState('');
-    const [lastName, setlastName] = useState('');
-    const [Location, setLocation] = useState('');
-    const [currentAge, setcurrentAge] = useState();
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [location, setLocation] = useState('');
+    const [currentAge, setCurrentAge] = useState('');
 
     const firstNameHandler = (event) => {
-
-        setfirstName(event.target.value);
-
-    }
+        setFirstName(event.target.value);
+    };
 
     const lastNameHandler = (event) => {
+        setLastName(event.target.value);
+    };
 
-        setlastName(event.target.value);
-
-    }
-
-    const LocationHandler = (event) => {
-
+    const locationHandler = (event) => {
         setLocation(event.target.value);
-
-    }
+    };
 
     const currentAgeHandler = (event) => {
-
-        setcurrentAge(event.target.value);
-
-    }
+        setCurrentAge(event.target.value);
+    };
 
     // Define state variable for search key
     const [searchKey, setSearchKey] = useState('');
@@ -70,36 +62,36 @@ function MyTable(){
     // Function to handle input change for search
     const inputChange = (event) => {
         setSearchKey(event.target.value);
-    }
+    };
 
     // Filter users based on search key
     let filteredUsers = users.filter((criteria) => {
         let newCriteria = criteria.fname + criteria.lname + criteria.city + criteria.age;
         return newCriteria.toLowerCase().includes(searchKey.toLowerCase());
-    })
+    });
 
     // Function to handle click event for test button
-const formSubmit = (event) => {
-    event.preventDefault();
-    // Create a new entry for the user
-    let newEntry = {
-        fname: firstName,
-        lname: lastName,
-        city: Location,
-        age: currentAge
+    const formSubmit = (event) => {
+        event.preventDefault();
+        // Create a new entry for the user
+        let newEntry = {
+            fname: firstName,
+            lname: lastName,
+            city: location,
+            age: currentAge
+        };
+        // Create a new array by spreading the existing users array and adding the new entry
+        let usersCopy = [...users, newEntry];
+        // Update the state with the new array
+        setUsers(usersCopy);
     };
-    // Create a new array by spreading the existing users array and adding the new entry
-    let usersCopy = [...users, newEntry];
-    // Update the state with the new array
-    setUsers(usersCopy);
-};
 
     // Function to handle delete operation for a user
     const handleDelete = (i) => {
         let userCopy = [...users];
         userCopy.splice(i, 1);
         setUsers(userCopy);
-    }
+    };
 
     // Render JSX markup to display table of users
     return (
@@ -119,7 +111,7 @@ const formSubmit = (event) => {
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Enter City: </Form.Label>
-                                <Form.Control type="text" placeholder="Enter City" value={Location} onChange={LocationHandler}/>
+                                <Form.Control type="text" placeholder="Enter City" value={location} onChange={locationHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Enter Age : </Form.Label>
