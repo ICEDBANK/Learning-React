@@ -107,7 +107,7 @@ function MyTable(){
 
     const [isEditing, setEditing] = useState(true);
 
-    const updateHandler = () => {
+    const updateHandler = (event) => {
         
         event.preventDefault();
         setEditing(true);
