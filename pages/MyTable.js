@@ -134,7 +134,7 @@ function MyTable(){
     
 
     // State variable to track if editing mode is enabled
-    const [isEditing, setEditing] = useState(true);
+    const [isEditing, setEditing] = useState(false);
 
     // Render JSX markup to display table of users
     return (
