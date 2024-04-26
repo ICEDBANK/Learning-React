@@ -106,13 +106,12 @@ function MyTable(){
         setLocation(targetItem.city);
         setCurrentAge(targetItem.age);
         settargetId(index);
-        console.log('edit clicked');
         setEditing(false);
     };
 
-    // Function to handle update operation for a user
     const updateHandler = (event) => {
         event.preventDefault();
+        console.log('Update button clicked');
         let usersCopy = users.map((user, index) => {
             if (index === targetId) {
                 return {
