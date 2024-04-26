@@ -172,7 +172,7 @@ function MyTable(){
                                         <td>{user.age}</td>
                                         <td>
                                             {/* Buttons for edit, update, and delete operations */}
-                                            
+                                            {}
                                             <Button variant="warning mx-2" size='sm' onClick={() => editItem(index)}>Edit</Button>
                                             <Button variant="danger mx-2" size='sm' onClick={() => handleDelete(index)}>Delete</Button>
                                         </td>
