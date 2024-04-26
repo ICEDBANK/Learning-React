@@ -110,20 +110,8 @@ function MyTable(){
     };
 
     // Function to handle update operation for a user
-    const updateHandler = (event) => {
+    const updateHandler = () => {
         alert('Update Button Clicked');
-        event.preventDefault();
-        let usersCopy = {...users};
-        let targetItem = usersCopy[targetId];
-        targetItem.firstName;
-        targetItem.lastName;
-        targetItem.location;
-        targetItem.currentAge;
-        setUsers(usersCopy);
-        setFirstName('');
-        setLastName('');
-        setLocation('');
-        setCurrentAge('');
         setEditing(true);
     };
 
