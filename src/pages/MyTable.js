@@ -42,7 +42,12 @@ function MyTable(){
 
     const editItem = (index) => {
 
-        
+        let usersCopy = {...users};
+        let targetItem = usersCopy[index];
+        setFirstName(targetItem.fname);
+        setFirstName(targetItem.lname);
+        setFirstName(targetItem.city);
+        setFirstName(targetItem.age);
 
     }
 
@@ -116,7 +121,7 @@ function MyTable(){
                                 <Form.Control type="text" placeholder="Enter Last Name" value={lastName} onChange={lastNameHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Form.Label>Enter City: </Form.Label>
+                                <Form.Label>Enter False: </Form.Label>
                                 <Form.Control type="text" placeholder="Enter City" value={location} onChange={locationHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
