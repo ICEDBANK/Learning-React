@@ -40,8 +40,6 @@ function MyTable(){
     const [location, setLocation] = useState('');
     const [currentAge, setCurrentAge] = useState('');
 
-
-
     const firstNameHandler = (event) => {
         setFirstName(event.target.value);
     };
