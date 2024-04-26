@@ -132,7 +132,7 @@ function MyTable(){
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Button variant="primary" type='submit'>Submit</Button>
-                                <Button variant="info" type=''>Update</Button>
+                                <Button variant="info" type='submit'>Update</Button>
                             </Form.Group>
                         </Form>
                     </Col>
