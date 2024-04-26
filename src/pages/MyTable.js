@@ -113,7 +113,7 @@ function MyTable(){
                 <Row>
                     {/* Form for adding new user */}
                     <Col md={4}>
-                        <Form onSubmit={formSubmit}>
+                        <Form onSubmit={isformSubmit}>
                             <Form.Group className="mb-3">
                                 <Form.Label>Enter First Name: </Form.Label>
                                 <Form.Control type="text" placeholder="Enter First Name" value={firstName} onChange={firstNameHandler}/>
