@@ -24,7 +24,7 @@ gulp.task('pull-changes', function(cb) {
 const debouncedCommitAndPush = debounce(function() {
     console.log('Debounced function called. Waiting for debounce delay...');
     gulp.series('commit-changes', 'push-changes')();
-}, 300000); // 5-minute debounce time (adjust as needed)
+}, 60000); // 1-minute debounce time (adjust as needed)
 
 // Watch task to trigger commit and push after a debounce period
 gulp.task('watch', function() {

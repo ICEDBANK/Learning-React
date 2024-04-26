@@ -95,6 +95,8 @@ function MyTable(){
         setUsers(userCopy);
     };
 
+    const [targetId, settargetId] = useState(0);
+
     // Function to handle edit operation for a user
     const editItem = (index) => {
         // Set form inputs with user data for editing
@@ -103,11 +105,16 @@ function MyTable(){
         setLastName(targetItem.lname);
         setLocation(targetItem.city);
         setCurrentAge(targetItem.age);
+        settargetId(index);
+        setEditing(false);
     };
 
     // Function to handle update operation for a user
     const updateHandler = (event) => {
         event.preventDefault();
+        let usersCopy = {...users};
+        let targetItem = usersCopy[targetId];
+        setEditing(true);
         // Perform update operation here if needed
     };
 
