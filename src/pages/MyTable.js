@@ -98,7 +98,7 @@ function MyTable(){
         let usersCopy = {...users};
         let targetItem = usersCopy[index];
         setFirstName(targetItem.fname);
-        setFirstName(targetItem.lname);
+        setLastName(targetItem.lname);
         setFirstName(targetItem.city);
         setFirstName(targetItem.age);
 
