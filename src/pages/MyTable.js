@@ -40,7 +40,16 @@ function MyTable(){
     const [location, setLocation] = useState('');
     const [currentAge, setCurrentAge] = useState('');
 
-X
+    const editItem = (index) => {
+
+        let usersCopy = {...users};
+        let targetItem = usersCopy[index];
+        setFirstName(targetItem.fname);
+        setFirstName(targetItem.lname);
+        setFirstName(targetItem.city);
+        setFirstName(targetItem.age);
+
+    }
 
     const firstNameHandler = (event) => {
         setFirstName(event.target.value);
