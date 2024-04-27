@@ -1,79 +1,53 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
-import { Container, Form, Row, Col } from 'react-bootstrap';
+// Import necessary dependencies and styles
+import { useState } from 'react'; // Importing the useState hook from React for managing state
+import Button from 'react-bootstrap/Button'; // Importing Button component from react-bootstrap library
+import Table from 'react-bootstrap/Table'; // Importing Table component from react-bootstrap library
+import { Container, Form, Row, Col } from 'react-bootstrap'; // Importing Container, Form, Row, and Col components from react-bootstrap library
 
 // Define MyTable component
-function MyTable(){
+function MyTable() {
 
-    // Define an array of user data
-    const [users , setUsers] = useState([
+    // Define an array of user data and a state setter function to update it
+    const [users , setUsers] = useState([ // Using the useState hook to define state variable 'users' and its setter function 'setUsers' with initial value
         {
             fname: "Joshua",
             lname: "Rice",
             city: "Ephrata",
             age: 36
         },
-        {
-            fname: "Sarah",
-            lname: "Beiler",
-            city: "Narvon",
-            age: 35
-        },
-        {
-            fname: "Ava",
-            lname: "Rice",
-            city: "Reading",
-            age: 6
-        },
-        {
-            fname: "Adeline",
-            lname: "Rice",
-            city: "Wyomissing",
-            age: 2
-        }
+        // Sample user data
     ]);
 
     // State variables for form inputs
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [location, setLocation] = useState('');
-    const [currentAge, setCurrentAge] = useState('');
+    const [firstName, setFirstName] = useState(''); // State variable 'firstName' and its setter function
+    const [lastName, setLastName] = useState(''); // State variable 'lastName' and its setter function
+    const [location, setLocation] = useState(''); // State variable 'location' and its setter function
+    const [currentAge, setCurrentAge] = useState(''); // State variable 'currentAge' and its setter function
 
     // Event handlers for form inputs
-    const firstNameHandler = (event) => {
-        setFirstName(event.target.value);
+    const firstNameHandler = (event) => { // Function to handle changes in the first name input field
+        setFirstName(event.target.value); // Updating the state variable 'firstName' with the new value
     };
 
-    const lastNameHandler = (event) => {
-        setLastName(event.target.value);
-    };
+    // Similar event handlers for lastName, location, and currentAge
 
-    const locationHandler = (event) => {
-        setLocation(event.target.value);
-    };
-
-    const currentAgeHandler = (event) => {
-        setCurrentAge(event.target.value);
-    };
-
-    // State variable for search key
+    // State variable for search key and its setter function
     const [searchKey, setSearchKey] = useState('');
 
     // Function to handle input change for search
-    const inputChange = (event) => {
-        setSearchKey(event.target.value);
+    const inputChange = (event) => { // Function to handle changes in the search input field
+        setSearchKey(event.target.value); // Updating the state variable 'searchKey' with the new value
     };
 
     // Filter users based on search key
-    let filteredUsers = users.filter((criteria) => {
-        let newCriteria = criteria.fname + criteria.lname + criteria.city + criteria.age;
-        return newCriteria.toLowerCase().includes(searchKey.toLowerCase());
+    let filteredUsers = users.filter((criteria) => { // Filtering the users array based on search criteria
+        let newCriteria = criteria.fname + criteria.lname + criteria.city + criteria.age; // Combining user properties for search
+        return newCriteria.toLowerCase().includes(searchKey.toLowerCase()); // Returning true if search criteria match user data
     });
 
     // Function to handle form submission
-    const formSubmit = (event) => {
-        event.preventDefault();
+    const formSubmit = (event) => { // Function to handle form submission when adding a new user
+        event.preventDefault(); // Preventing the default form submission behavior
         // Create a new entry for the user
         let newEntry = {
             fname: firstName,
@@ -88,10 +62,10 @@ function MyTable(){
     };
 
     // Function to handle delete operation for a user
-    const handleDelete = (i) => {
-        let userCopy = [...users];
-        userCopy.splice(i, 1);
-        setUsers(userCopy);
+    const handleDelete = (i) => { // Function to handle deletion of a user from the table
+        let userCopy = [...users]; // Creating a copy of the users array
+        userCopy.splice(i, 1); // Removing the user at index 'i' from the copied array
+        setUsers(userCopy); // Updating the state with the modified array
     };
 
     // Function to handle edit operation for a user
