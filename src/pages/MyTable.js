@@ -1,4 +1,3 @@
-// Import necessary dependencies and styles
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
@@ -35,11 +34,13 @@ function MyTable(){
         }
     ]);
 
+    // State variables for form inputs
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [location, setLocation] = useState('');
     const [currentAge, setCurrentAge] = useState('');
 
+    // Event handlers for form inputs
     const firstNameHandler = (event) => {
         setFirstName(event.target.value);
     };
@@ -56,7 +57,7 @@ function MyTable(){
         setCurrentAge(event.target.value);
     };
 
-    // Define state variable for search key
+    // State variable for search key
     const [searchKey, setSearchKey] = useState('');
 
     // Function to handle input change for search
@@ -70,7 +71,7 @@ function MyTable(){
         return newCriteria.toLowerCase().includes(searchKey.toLowerCase());
     });
 
-    // Function to handle click event for test button
+    // Function to handle form submission
     const formSubmit = (event) => {
         event.preventDefault();
         // Create a new entry for the user
@@ -93,28 +94,46 @@ function MyTable(){
         setUsers(userCopy);
     };
 
-    const editItem = (index) => {
-
-        let usersCopy = {...users};
-        let targetItem = usersCopy[index];
+    // Function to handle edit operation for a user
+        const editItem = (index) => {
+        // Set form inputs with user data for editing
+        let targetItem = users[index];
         setFirstName(targetItem.fname);
         setLastName(targetItem.lname);
         setLocation(targetItem.city);
         setCurrentAge(targetItem.age);
+        settargetId(index);
         setEditing(false);
+    };
 
-    }
+    const [targetId, settargetId] = useState(0);
 
-    const [isEditing, setEditing] = useState(true);
-
+    // Function to handle update operation for a user
     const updateHandler = (event) => {
-        
         event.preventDefault();
         let usersCopy = [...users];
-        let targetItem = usersCopy;
-        setEditing(false);
+        let targetItem = usersCopy[targetId];
+        
+        // Update the target user object properties
+        targetItem.fname = firstName;
+        targetItem.lname = lastName;
+        targetItem.city = location;
+        targetItem.age = currentAge;
+        // Set the updated array of users
+        setUsers(usersCopy);
+        // Reset form inputs and editing mode
+        setFirstName('');
+        setLastName('');
+        setLocation('');
+        setCurrentAge('');
+        setEditing(true);
+    };
 
-    }
+
+    // State variable to track if editing mode is enabled
+    const [isEditing, setEditing] = useState(true);
+
+    
 
     // Render JSX markup to display table of users
     return (
@@ -141,7 +160,7 @@ function MyTable(){
                                 <Form.Control type="number" placeholder="Enter Age" value={currentAge} onChange={currentAgeHandler}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                {isEditing ? (<Button variant="primary" type='submit'>Submit</Button>):(<Button variant="info" type='submit'>Update</Button>)}
+                                {isEditing ? (<Button variant="primary" type='submit'>Submit</Button>) : (<Button variant="info" type='submit'>Update</Button>)}
                             </Form.Group>
                         </Form>
                     </Col>
@@ -150,7 +169,7 @@ function MyTable(){
                         <h1>My Table Page</h1>
                         <h2>List of Users</h2>
                         {/* Input field for search */}
-                        <input  className="mb-4" type="text" name="" id="" placeholder='Search' value={searchKey} onChange={inputChange}/>
+                        <input className="mb-4" type="text" name="" id="" placeholder='Search' value={searchKey} onChange={inputChange}/>
                         {/* Table to display user data */}
                         <Table striped>
                             {/* Table header */}
@@ -172,7 +191,7 @@ function MyTable(){
                                         <td>{user.city}</td>
                                         <td>{user.age}</td>
                                         <td>
-                                            {/* Buttons for edit, update, and delete operations */}
+                                            {/* Buttons for edit and delete operations */}
                                             <Button variant="warning mx-2" size='sm' onClick={() => editItem(index)}>Edit</Button>
                                             <Button variant="danger mx-2" size='sm' onClick={() => handleDelete(index)}>Delete</Button>
                                         </td>
